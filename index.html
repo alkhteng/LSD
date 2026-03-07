@@ -181,12 +181,13 @@
 
         .download-cv:hover { color: #444; }
 
+        /* ✅ KEY CHANGE: headshot fills full right side */
         .headshot-container {
             position: absolute;
             right: 0;
             top: 0;
             bottom: 0;
-            width: 480px;
+            width: calc(100% - 520px); /* fills everything right of content */
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -195,10 +196,9 @@
         }
 
         .headshot {
-            width: auto;
-            height: 100%;
-            max-width: 100%;
-            object-fit: contain;
+            height: 100%;              /* full card height */
+            width: 100%;               /* fill container width */
+            object-fit: contain;       /* keeps proportions */
             object-position: bottom center;
         }
 
@@ -213,7 +213,7 @@
         @media (max-width: 1024px) {
             .business-card { padding: 30px; }
             .content-left { flex: 0 0 420px; max-width: 420px; }
-            .headshot-container { width: 380px; }
+            .headshot-container { width: calc(100% - 420px); }
         }
 
         /* Tablets - stacked layout */
@@ -242,6 +242,7 @@
             .headshot {
                 height: 100%;
                 width: auto;
+                object-fit: contain;
             }
         }
 
@@ -323,7 +324,6 @@
                 <a href="https://wa.me/+6588481829" class="chat-button">
                     <i class="fas fa-phone"></i> Let's Chat
                 </a>
-                <!-- ✅ UPDATED: points to lms-login.html -->
                 <a href="lms-login.html"
                    target="_blank" class="download-cv" style="margin-top: 15px; color: #28a745;">
                     <i class="fas fa-graduation-cap"></i> Live LMS Demo
