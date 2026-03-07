@@ -181,13 +181,13 @@
 
         .download-cv:hover { color: #444; }
 
-        /* ✅ KEY CHANGE: headshot fills full right side */
+        /* ✅ UPDATED: wider container + cover fill */
         .headshot-container {
             position: absolute;
             right: 0;
             top: 0;
             bottom: 0;
-            width: calc(100% - 520px); /* fills everything right of content */
+            width: calc(100% - 460px); /* ✅ was 520px — wider photo area */
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -195,11 +195,12 @@
             overflow: hidden;
         }
 
+        /* ✅ UPDATED: cover fills container, anchored to bottom */
         .headshot {
-            height: 100%;              /* full card height */
-            width: 100%;               /* fill container width */
-            object-fit: contain;       /* keeps proportions */
-            object-position: bottom center;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;             /* ✅ was contain — fills fully */
+            object-position: top center;   /* ✅ anchors face at top, body fills down */
         }
 
         .action-buttons {
@@ -212,8 +213,8 @@
         /* Large tablets */
         @media (max-width: 1024px) {
             .business-card { padding: 30px; }
-            .content-left { flex: 0 0 420px; max-width: 420px; }
-            .headshot-container { width: calc(100% - 420px); }
+            .content-left { flex: 0 0 400px; max-width: 400px; }
+            .headshot-container { width: calc(100% - 400px); } /* ✅ matches above */
         }
 
         /* Tablets - stacked layout */
@@ -221,7 +222,7 @@
             .business-card {
                 flex-direction: column;
                 min-height: auto;
-                padding-bottom: 500px;
+                padding-bottom: 560px; /* ✅ was 500px */
             }
             .content-left {
                 flex: unset;
@@ -235,14 +236,15 @@
                 bottom: 0;
                 top: auto;
                 width: 100%;
-                height: 480px;
+                height: 540px; /* ✅ was 480px */
                 align-items: flex-end;
                 justify-content: center;
             }
             .headshot {
                 height: 100%;
-                width: auto;
-                object-fit: contain;
+                width: 100%;
+                object-fit: cover;         /* ✅ cover on tablet too */
+                object-position: top center;
             }
         }
 
@@ -250,27 +252,27 @@
         @media (max-width: 768px) {
             .name { font-size: 36px; }
             .title { font-size: 20px; }
-            .headshot-container { height: 380px; }
-            .business-card { padding-bottom: 420px; }
+            .headshot-container { height: 440px; } /* ✅ was 380px */
+            .business-card { padding-bottom: 480px; } /* ✅ was 420px */
         }
 
         /* Large phones */
         @media (max-width: 600px) {
             .business-card {
                 padding: 25px;
-                padding-bottom: 360px;
+                padding-bottom: 420px; /* ✅ was 360px */
             }
             .greeting { font-size: 20px; }
             .name { font-size: 32px; }
             .tagline { font-size: 16px; }
-            .headshot-container { height: 330px; }
+            .headshot-container { height: 390px; } /* ✅ was 330px */
         }
 
         /* Small phones */
         @media (max-width: 480px) {
             .business-card {
                 padding: 20px;
-                padding-bottom: 310px;
+                padding-bottom: 370px; /* ✅ was 310px */
             }
             .greeting { font-size: 18px; }
             .name { font-size: 28px; }
@@ -279,7 +281,7 @@
                 padding: 10px 20px;
                 font-size: 16px;
             }
-            .headshot-container { height: 280px; }
+            .headshot-container { height: 340px; } /* ✅ was 280px */
         }
 
         /* Very small phones */
@@ -288,7 +290,7 @@
             .tagline, .highlight { font-size: 15px; }
             .expertise-title { font-size: 16px; }
             .expertise-list li { font-size: 14px; }
-            .headshot-container { height: 240px; }
+            .headshot-container { height: 300px; } /* ✅ was 240px */
         }
     </style>
 </head>
