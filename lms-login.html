@@ -29,11 +29,11 @@
     <div class="spinner"></div>
     <p>Loading LMS Demo...</p>
 
-    <form id="lmsLogin" method="POST" action="https://alistairlsd.gnomio.com/login/index.php">
-        <input type="hidden" name="login" value="teacher@888">
-        <input type="hidden" name="password" value="Teacher@888">
-        <input type="hidden" name="_qf__login" value="">
-    </form>
+   <form id="lmsLogin" method="POST" action="https://alistairlsd.gnomio.com/login/index.php">
+    <!-- Changed "login" to "username" so Moodle recognizes it -->
+    <input type="hidden" name="username" value="teacher@888">
+    <input type="hidden" name="password" value="Teacher@888">
+</form>
 
     <script>
         setTimeout(function() {
